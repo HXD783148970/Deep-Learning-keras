@@ -33,13 +33,14 @@ sgd = SGD(lr=0.01)
 #SGd随机梯度下降，mse均方误差
 model.compile(optimizer=sgd,loss='mse')
 
+#训练模型
+model.fit(x_data,y_data,epochs=3000)
 #迭代3000个批次
-for step in range(len(y_data)):
+#for step in range(len(y_data)):
     #每次训练一个批次
-    cost = model.train_on_batch(x_data,y_data)
+#    cost = model.train_on_batch(x_data,y_data)
     #每500batch打印一次COST值
-    if step%500==0:
-        print('cost',cost)
+#   if step%500==0: #       print('cost',cost)
 #打印权值和片纸置值
 W,b = model.layers[0].get_weights()
 print('W:',W,'b:',b)
